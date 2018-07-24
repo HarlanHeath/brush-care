@@ -24,7 +24,7 @@ app.get("/api/products", controller.getProducts);
 //cart crud
 app.get("api/cart", cartcontroller.getCart);
 //Postman is throwing up an error for this, possible that it's because there's no data in it
-//Need to add an app.delete to remove items from the cart
+app.delete("api/delete", cartcontroller.deleteCart);
 //Need to add an app.put to add items to the cart
 //Need to add an app.post to edit the quantity of items in the current cart
 
