@@ -1,6 +1,7 @@
 module.exports = {
   getProducts: (req, res, next) => {
     const dbInstance = req.app.get("db");
+
     dbInstance
       .all_abrush()
       .then(products => res.status(200).send(products))

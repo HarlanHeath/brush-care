@@ -1,0 +1,10 @@
+.card {
+  height: 300px;
+  width: 300px;
+  border: 1px solid black;
+}
+
+.imageSize {
+  height: 200px;
+  width: 200px;
+}
