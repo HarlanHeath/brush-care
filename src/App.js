@@ -10,7 +10,6 @@ class App extends Component {
       <HashRouter>
         <div className="App">
           <Navbar />
-          <div> I'm a website :D </div>
           {routes}
         </div>
       </HashRouter>

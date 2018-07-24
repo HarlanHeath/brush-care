@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import "./Home.css";
 
 export default class Home extends Component {
   render() {
-    return <div>I'm a Homepage!</div>;
+    return <div className="HomePage">I'm a Homepage!</div>;
   }
 }
