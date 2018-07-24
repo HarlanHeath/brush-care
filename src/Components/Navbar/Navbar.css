@@ -3,4 +3,14 @@
   height: 50px;
   width: 100%;
   background-color: darkcyan;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+}
+
+.route {
+  margin: 15px;
 }
