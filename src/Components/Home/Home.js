@@ -6,7 +6,7 @@ export default class Home extends Component {
     return (
       <div className="HomePage">
         <h2 className="Slogan">
-          The world’s finest art materials, for the world’s finest artists.
+          The world’s finest materials, for the world’s finest artists.
         </h2>
       </div>
     );

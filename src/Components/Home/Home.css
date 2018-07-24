@@ -1,10 +1,23 @@
 .HomePage {
   margin: 0;
   width: 100vw;
-  height: 50vh;
-  background-color: crimson;
+  height: 500px;
+  background-image: url("https://images.pexels.com/photos/697673/pexels-photo-697673.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .Slogan {
   margin: 0;
+  text-align: center;
+  font-family: "Felipa", cursive;
+  color: #30789e;
+  font-size: 50px;
+  letter-spacing: 1px;
 }
