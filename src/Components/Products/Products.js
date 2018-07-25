@@ -21,8 +21,9 @@ export default class Products extends Component {
   render() {
     let { brushes } = this.state;
     let allBrushes = brushes.map(e => {
+      console.log(e);
       return (
-        <div className="card" key={e.id}>
+        <div className="card" key={e.prod_id}>
           <img className="imageSize" src={e.imgurl} alt="Brush" />
           <h3> Size {e.size} </h3>
           <h3> Price ${e.price}</h3>

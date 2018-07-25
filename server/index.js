@@ -62,9 +62,8 @@ app.get("/api/products", controller.getProducts);
 
 //cart crud
 app.get("/api/cart/:id", cartcontroller.getCart);
-//Postman is throwing up an error for this.
+app.put("/api/addToCart/:user_id/:prod_id", cartcontroller.addToCart);
 //app.delete("/api/delete", cartcontroller.deleteCart); not working
-app.put("/api/updateCart/:id", cartcontroller.updateCart);
 //Need to add an app.post to edit the quantity of items in the current cart
 
 //login crud
