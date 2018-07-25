@@ -22,9 +22,40 @@ massive(process.env.CONNECTION_STRING).then(dbInstance => {
 
 app.use(json());
 
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+  })
+);
+
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(strategy);
+
+///////////////////Passport Login////////////////////////////
+passport.serializeUser((user, done) => {
+  const db = app.get("db");
+  db.users
+    .get_user_by_authid(user.id)
+    .then(response => {
+      if (!response[0]) {
+        db.users
+          .add_user_by_authid([user.displayName, user.id])
+          .then(res => done(null, res[0]))
+          .catch(err => done(err, null));
+      } else {
+        return done(null, response[0]);
+      }
+    })
+    .catch(err => done(err, null));
+});
+
+passport.deserializeUser((user, done) => {
+  done(null, user);
+});
+//////////////////////////////////////////////////////////
 
 //product crud
 app.get("/api/products", controller.getProducts);
@@ -33,8 +64,13 @@ app.get("/api/products", controller.getProducts);
 app.get("/api/cart/:id", cartcontroller.getCart);
 //Postman is throwing up an error for this.
 //app.delete("/api/delete", cartcontroller.deleteCart); not working
-app.put("/api/updateCart", cartcontroller.updateCart);
+app.put("/api/updateCart/:id", cartcontroller.updateCart);
 //Need to add an app.post to edit the quantity of items in the current cart
+
+//login crud
+app.get("/login", login);
+app.post("/logout", logout);
+app.get("/api/me", getUser);
 
 app.listen(port, () => {
   console.log(`Listening on port: ${port}`);

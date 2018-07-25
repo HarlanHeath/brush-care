@@ -14,6 +14,10 @@ module.exports = {
   updateCart: (req, res, next) => {
     const dbInstance = req.app.get("db");
     //console.log("HIT");
-    dbInstance.get_cart(req.paras.id);
+    dbInstance
+      .get_cart(req.params.id)
+      //.then(() => res.status(200).send("ITS WORKING!!!"));
+      //.then(cart => res.status(200).send(cart));
+      .then(prod_id => res.status(200).send(prod_id));
   }
 };

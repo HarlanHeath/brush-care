@@ -1,0 +1,1 @@
+INSERT INTO users (fname, authid) VALUES ($1, $2) RETURNING *;
