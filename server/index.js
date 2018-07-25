@@ -4,6 +4,10 @@ const { json } = require("body-parser");
 const session = require("express-session");
 const massive = require("massive");
 const axios = require("axios");
+const passport = require("passport");
+const strategy = require("strategy");
+//login controller
+const { logout, login, getUser } = require("./Controllers/userCtrl");
 //product controllers
 const controller = require("./Controllers/getProducts");
 //cart conctrollers
@@ -17,6 +21,10 @@ massive(process.env.CONNECTION_STRING).then(dbInstance => {
 });
 
 app.use(json());
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(strategy);
 
 //product crud
 app.get("/api/products", controller.getProducts);
