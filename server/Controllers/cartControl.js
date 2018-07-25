@@ -1,9 +1,9 @@
 module.exports = {
   getCart: (req, res, next) => {
     const dbInstance = req.app.get("db");
-
+    //console.log("HIT");
     dbInstance
-      .get_cart()
+      .get_cart(req.params.id)
       .then(cart => res.status(200).send(cart))
       .catch(err => {
         res.status(500).send(err);
@@ -11,15 +11,9 @@ module.exports = {
       });
   },
 
-  deleteCart: (req, res, next) => {
+  updateCart: (req, res, next) => {
     const dbInstance = req.app.get("db");
-
-    dbInstance;
-    delete_cart()
-      .then(cart => res.statis(200).send(cart))
-      .catch(err => {
-        res.status(500).send(err);
-        console.log("Something has gone wrong!");
-      });
+    //console.log("HIT");
+    dbInstance.get_cart(req.paras.id);
   }
 };

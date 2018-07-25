@@ -30,10 +30,10 @@ passport.use(strategy);
 app.get("/api/products", controller.getProducts);
 
 //cart crud
-app.get("api/cart", cartcontroller.getCart);
-//Postman is throwing up an error for this, possible that it's because there's no data in it
-app.delete("api/delete", cartcontroller.deleteCart);
-//Need to add an app.put to add items to the cart
+app.get("/api/cart/:id", cartcontroller.getCart);
+//Postman is throwing up an error for this.
+//app.delete("/api/delete", cartcontroller.deleteCart); not working
+app.put("/api/updateCart", cartcontroller.updateCart);
 //Need to add an app.post to edit the quantity of items in the current cart
 
 app.listen(port, () => {
