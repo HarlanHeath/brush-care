@@ -31,6 +31,7 @@ export default class Cart extends Component {
         <div className="card">
           <h3>{e.quantity}</h3>
           <h3>brush size{e.size}</h3>
+          <button>Remove from Cart </button>
         </div>
       );
     });

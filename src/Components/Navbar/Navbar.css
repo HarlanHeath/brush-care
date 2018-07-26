@@ -3,6 +3,7 @@
   height: 50px;
   width: 100%;
   background-color: slategray;
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

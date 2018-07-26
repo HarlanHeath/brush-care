@@ -36,7 +36,6 @@ module.exports = {
 
   deleteFromCart: (req, res, next) => {
     const dbInstance = req.app.get("db");
-    // console.log("I'M HIT"); //This hits when Postman goes fires
     dbInstance
       .delete_cart(req.params.id)
       .then(cart => res.status(200).send(cart))

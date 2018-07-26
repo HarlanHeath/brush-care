@@ -18,9 +18,14 @@ export default class Products extends Component {
     });
   }
 
-  // addToCart() {
-  //   axios.put("/api/addToCart/");
-  // }
+  addToCart(val) {
+    //console.log("bang!");
+    axios.get(`/api/me`).then(res1 => {
+      axios.put(`/api/addToCart/${res1.data.user_id}/${val}`).then(() => {
+        alert("producted added!");
+      });
+    });
+  }
 
   render() {
     let { brushes } = this.state;
@@ -31,7 +36,10 @@ export default class Products extends Component {
           <img className="imageSize" src={e.imgurl} alt="Brush" />
           <h3> Size {e.size} </h3>
           <h3> Price ${e.price}</h3>
-          <button> Add to Cart </button>
+          <button onClick={() => this.addToCart(e.prod_id)}>
+            {" "}
+            Add to Cart{" "}
+          </button>
           <div />
         </div>
       );
