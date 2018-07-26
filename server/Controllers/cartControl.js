@@ -1,6 +1,7 @@
 module.exports = {
   getCart: (req, res, next) => {
     const dbInstance = req.app.get("db");
+    console.log(req.params);
     dbInstance
       .get_cart(req.params.id)
       .then(cart => res.status(200).send(cart))
@@ -27,10 +28,17 @@ module.exports = {
           .then(response => res.status(200).send("Added to Cart!"));
       }
     });
-  }
+  },
 
-  // deleteFromCart:(req,res,next)=>{
-  //   const dbInstance = req.app.get("db");
-  //   dbInstance.get_cart(req.params.)
-  // }
+  deleteFromCart: (req, res, next) => {
+    const dbInstance = req.app.get("db");
+    console.log("I'M HIT"); //This hits when Postman goes fires
+    dbInstance
+      .delete_cart(req.params.id)
+      .then(cart => res.status(200).send(cart))
+      .catch(err => {
+        res.status(500).send(err);
+        console.log("Something has gone wrong!");
+      });
+  }
 };

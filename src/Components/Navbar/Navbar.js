@@ -6,7 +6,6 @@ export default class Navbar extends Component {
   render() {
     return (
       <div className="Mainbar">
-        {/* <div className="linksContain"> */}
         <Link to="/" className="route">
           Home
         </Link>
@@ -16,7 +15,9 @@ export default class Navbar extends Component {
         <Link to="/cart" className="route">
           Cart
         </Link>
-        {/* </div> */}
+        <Link to="/login" className="route">
+          Login
+        </Link>
       </div>
     );
   }

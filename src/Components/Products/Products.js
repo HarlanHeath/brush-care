@@ -18,6 +18,8 @@ export default class Products extends Component {
     });
   }
 
+  axios.put("/api/addToCart/"){}
+
   render() {
     let { brushes } = this.state;
     let allBrushes = brushes.map(e => {
@@ -27,6 +29,7 @@ export default class Products extends Component {
           <img className="imageSize" src={e.imgurl} alt="Brush" />
           <h3> Size {e.size} </h3>
           <h3> Price ${e.price}</h3>
+          <button> Add to Cart </button>
           <div />
         </div>
       );

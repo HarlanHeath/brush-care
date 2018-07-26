@@ -1,1 +1,1 @@
-DELETE FROM car WHERE id = $1
+DELETE FROM cart WHERE id = $1

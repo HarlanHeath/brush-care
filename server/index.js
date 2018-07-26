@@ -5,7 +5,7 @@ const session = require("express-session");
 const massive = require("massive");
 const axios = require("axios");
 const passport = require("passport");
-const strategy = require("strategy");
+const strategy = require("./strategy");
 //login controller
 const { logout, login, getUser } = require("./Controllers/userCtrl");
 //product controllers
@@ -37,12 +37,11 @@ passport.use(strategy);
 ///////////////////Passport Login////////////////////////////
 passport.serializeUser((user, done) => {
   const db = app.get("db");
-  db.users
-    .get_user_by_authid(user.id)
+  console.log(user);
+  db.get_user_by_authid(user.id)
     .then(response => {
       if (!response[0]) {
-        db.users
-          .add_user_by_authid([user.displayName, user.id])
+        db.add_user_by_authid([user.displayName, user.id])
           .then(res => done(null, res[0]))
           .catch(err => done(err, null));
       } else {
@@ -63,7 +62,7 @@ app.get("/api/products", controller.getProducts);
 //cart crud
 app.get("/api/cart/:id", cartcontroller.getCart);
 app.put("/api/addToCart/:user_id/:prod_id", cartcontroller.addToCart);
-//app.delete("/api/delete", cartcontroller.deleteCart); not working
+app.delete("/api/delete/:id", cartcontroller.deleteFromCart);
 //Need to add an app.post to edit the quantity of items in the current cart
 
 //login crud
