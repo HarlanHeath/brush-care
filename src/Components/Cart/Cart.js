@@ -11,10 +11,12 @@ export default class Cart extends Component {
   }
 
   componentDidMount() {
-    axios.get("/api/me").then(res => {
-      axios.get(`/api/cart/`).then(res => {
+    axios.get(`/api/me`).then(res1 => {
+      //console.log(res1.data.user_id);
+      axios.get(`/api/cart/${res1.data.user_id}`).then(res2 => {
+        console.log(res2);
         this.setState({
-          cart: res.data
+          cart: res2.data
         });
       });
     });
@@ -22,11 +24,13 @@ export default class Cart extends Component {
 
   render() {
     let { cart } = this.state;
+    console.log(cart);
     let allCart = cart.map(e => {
       console.log(e);
       return (
         <div className="card">
           <h3>{e.quantity}</h3>
+          <h3>brush size{e.size}</h3>
         </div>
       );
     });

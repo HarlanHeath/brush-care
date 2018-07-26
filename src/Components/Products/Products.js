@@ -18,7 +18,9 @@ export default class Products extends Component {
     });
   }
 
-  axios.put("/api/addToCart/"){}
+  // addToCart() {
+  //   axios.put("/api/addToCart/");
+  // }
 
   render() {
     let { brushes } = this.state;
