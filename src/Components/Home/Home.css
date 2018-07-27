@@ -7,17 +7,17 @@
   background-position: center;
   background-size: cover;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   align-content: center;
 }
 
 .Slogan {
   margin: 0;
-  height: 300px;
-  width: 300px;
+  /* height: 300px;
+  width: 300px; */
   text-align: center;
   font-family: "Felipa", cursive;
   color: yellow;
