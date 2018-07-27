@@ -35,14 +35,27 @@ export default class Cart extends Component {
     });
   }
 
+  updateQuant(e) {
+    //console.log("bang!");
+    axios.get(`/api/me`).then(res1 => {
+      axios.post(`/api/quantchange/${res1.data.user_id}/${e}`).then(() => {
+        this.getCart(this.state.userId);
+      });
+    });
+  }
+
   render() {
     let { cart } = this.state;
-    console.log(cart);
+    //console.log(cart);
     let allCart = cart.map(e => {
-      console.log(e);
+      //console.log(e);
       return (
         <div className="card">
           <h3>{e.quantity}</h3>
+          <button onClick={() => this.updateQuant(e.prod_id)}>
+            {" "}
+            edit quantity{" "}
+          </button>
           <h3>brush size{e.size}</h3>
           <button onClick={() => this.removeFromCart(e.id)}>
             Remove from Cart
@@ -53,10 +66,3 @@ export default class Cart extends Component {
     return <div>{allCart}</div>;
   }
 }
-
-// fire get cart in componentdidmount
-// save cart to state
-// map through cart and show values on screen
-// make a button tag in map
-// button onCLick pass in id and fire Axios.delete
-// Axios.delete .then (() => getCart)
