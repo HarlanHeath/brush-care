@@ -2,10 +2,12 @@
   height: "350px";
   width: "250px";
   border: "1px solid black";
-  display: "flex";
-  justifycontent: "center";
-  alignitems: "center";
-  flexdirection: "column";
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
 }
 
 .imageSize {

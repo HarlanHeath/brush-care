@@ -7,7 +7,7 @@ export default class Navbar extends Component {
     return (
       <div className="Mainbar">
         <div className="dropdown">
-          <button className="dropbtn">Dropdown</button>
+          <button className="dropbtn">Menu</button>
           <div className="dropdown-content">
             <Link to="/" className="route">
               Home

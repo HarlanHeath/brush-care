@@ -1,0 +1,14 @@
+.logpage {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+}
+
+.logbuttons {
+  height: 100px;
+  width: 100px;
+  border: black 1px solid;
+}

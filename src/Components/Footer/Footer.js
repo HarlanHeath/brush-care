@@ -3,6 +3,10 @@ import "./Footer.css";
 
 export default class Footer extends Component {
   render() {
-    return <div className="Footer" />;
+    return (
+      <div>
+        <footer className="Footer" />;
+      </div>
+    );
   }
 }

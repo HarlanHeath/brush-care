@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { HashRouter, Link } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
