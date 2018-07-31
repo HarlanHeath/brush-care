@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Acrylics from "./Acrylics";
 import "./Products.css";
 
 export default class Products extends Component {
@@ -44,6 +45,11 @@ export default class Products extends Component {
         </div>
       );
     });
-    return <div>{allBrushes}</div>;
+    return (
+      <div>
+        <Acrylics />
+        <div className="body">{allBrushes}</div>
+      </div>
+    );
   }
 }
