@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "../../../node_modules/axios";
+import Checkout from "../Stripe/Checkout";
 import "./Cart.css";
 
 export default class Cart extends Component {
@@ -63,6 +64,15 @@ export default class Cart extends Component {
         </div>
       );
     });
-    return <div>{allCart}</div>;
+    return (
+      <div>
+        {allCart}
+        <Checkout
+          name={"The Road to learn React"}
+          description={"Only the Book"}
+          amount={1}
+        />
+      </div>
+    );
   }
 }
