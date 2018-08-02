@@ -8,17 +8,28 @@ export default class Cart extends Component {
     super();
     this.state = {
       userId: null,
-      cart: []
+      cart: [],
+      total: 0
     };
   }
 
   componentDidMount() {
-    axios.get(`/api/me`).then(res => {
-      this.setState({
-        userId: res.data.user_id
-      });
-      this.getCart(res.data.user_id);
-    });
+    axios
+      .get(`/api/me`)
+      .then(res => {
+        this.setState({
+          userId: res.data.user_id
+        });
+        this.getCart(res.data.user_id);
+      })
+      .then(() => {
+        axios.get(`/api/carttotal/${this.state.userId}`).then(res2 => {
+          this.setState({
+            total: res2.data[0].sum
+          });
+        });
+      })
+      .catch(err => console.log(err));
   }
 
   getCart(id) {
@@ -49,14 +60,18 @@ export default class Cart extends Component {
     let { cart } = this.state;
     //console.log(cart);
     let allCart = cart.map(e => {
-      //console.log(e);
+      console.log(e);
       return (
-        <div className="card">
+        <div className="cart-card" key={e.prod_id}>
           <h3>{e.quantity}</h3>
-          <button onClick={() => this.updateQuant(e.prod_id)}>
+          <button
+            disabled={e.quantity <= 1 ? true : false}
+            onClick={() => this.updateQuant(e.prod_id)}
+          >
             {" "}
             edit quantity{" "}
           </button>
+          <img src={e.imgurl} className="cart-image-size" />
           <h3>brush size{e.size}</h3>
           <button onClick={() => this.removeFromCart(e.id)}>
             Remove from Cart
@@ -65,13 +80,14 @@ export default class Cart extends Component {
       );
     });
     return (
-      <div>
+      <div className="cart-container">
         {allCart}
-        <Checkout
+        <h3>{this.state.total}</h3>
+        {/* <Checkout
           name={"The Road to learn React"}
           description={"Only the Book"}
           amount={1}
-        />
+        /> */}
       </div>
     );
   }

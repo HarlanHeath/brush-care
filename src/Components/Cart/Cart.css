@@ -1,9 +1,22 @@
-.card {
-  height: "350px";
-  width: "250px";
-  border: "1px solid black";
-  display: "flex";
-  justify-content: "center";
-  align-items: "center";
-  flex-direction: "column";
+.cart-card {
+  height: 350px;
+  width: 250px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+}
+
+.cart-image-size {
+  height: 200px;
+  width: 200px;
+}
+
+.cart-container {
+  position: relative;
+  top: 100px;
+  height: 1200px;
 }

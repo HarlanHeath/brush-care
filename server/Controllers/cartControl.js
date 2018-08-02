@@ -63,5 +63,17 @@ module.exports = {
           .then(response => res.status(200).send("Added to Cart!"));
       }
     });
+  },
+
+  cartTotal: (req, res, next) => {
+    const dbInstance = req.app.get("db");
+    dbInstance
+      .quant_total(parseInt(req.params.user_id))
+      .then(response => {
+        res.status(200).send(response);
+      })
+      .catch(err => {
+        res.status(500).send(err);
+      });
   }
 };
