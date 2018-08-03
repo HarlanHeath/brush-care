@@ -83,11 +83,11 @@ export default class Cart extends Component {
       <div className="cart-container">
         {allCart}
         <h3>{this.state.total}</h3>
-        {/* <Checkout
+        <Checkout
           name={"The Road to learn React"}
           description={"Only the Book"}
           amount={1}
-        /> */}
+        />
       </div>
     );
   }
