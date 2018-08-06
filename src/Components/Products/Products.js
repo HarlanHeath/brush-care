@@ -20,7 +20,6 @@ export default class Products extends Component {
   }
 
   addToCart(val) {
-    //console.log("bang!");
     axios.get(`/api/me`).then(res1 => {
       axios.put(`/api/addToCart/${res1.data.user_id}/${val}`).then(() => {
         alert("producted added!");
@@ -31,7 +30,6 @@ export default class Products extends Component {
   render() {
     let { brushes } = this.state;
     let allBrushes = brushes.map(e => {
-      console.log(e);
       return (
         <div className="card" key={e.prod_id}>
           <img className="imageSize" src={e.imgurl} alt="Brush" />

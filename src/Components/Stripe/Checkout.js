@@ -5,7 +5,7 @@ import StripeCheckout from "react-stripe-checkout";
 import STRIPE_PUBLISHABLE from "../Constants/stripe";
 import PAYMENT_SERVER_URL from "../Constants/server";
 
-const CURRENCY = "EUR";
+const CURRENCY = "USD";
 
 const fromEuroToCent = amount => amount * 100;
 
@@ -35,7 +35,7 @@ const Checkout = ({ name, description, amount }) => (
     amount={fromEuroToCent(amount)}
     token={onToken(amount, description)}
     currency={CURRENCY}
-    stripKey={STRIPE_PUBLISHABLE}
+    stripeKey={STRIPE_PUBLISHABLE}
   />
 );
 

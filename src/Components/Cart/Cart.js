@@ -34,7 +34,6 @@ export default class Cart extends Component {
 
   getCart(id) {
     axios.get(`/api/cart/${id}`).then(res2 => {
-      //console.log(res2);
       this.setState({
         cart: res2.data
       });
@@ -48,7 +47,6 @@ export default class Cart extends Component {
   }
 
   updateQuant(e) {
-    //console.log("bang!");
     axios.get(`/api/me`).then(res1 => {
       axios.post(`/api/quantchange/${res1.data.user_id}/${e}`).then(() => {
         this.getCart(this.state.userId);
@@ -58,9 +56,7 @@ export default class Cart extends Component {
 
   render() {
     let { cart } = this.state;
-    //console.log(cart);
     let allCart = cart.map(e => {
-      console.log(e);
       return (
         <div className="cart-card" key={e.prod_id}>
           <h3>{e.quantity}</h3>
@@ -86,7 +82,7 @@ export default class Cart extends Component {
         <Checkout
           name={"The Road to learn React"}
           description={"Only the Book"}
-          amount={1}
+          amount={this.state.total}
         />
       </div>
     );

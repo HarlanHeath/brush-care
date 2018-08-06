@@ -20,6 +20,15 @@ massive(process.env.CONNECTION_STRING).then(dbInstance => {
   app.set("db", dbInstance);
 });
 
+// STRIPE
+const SERVER_CONFIGS = require("./constants/server");
+
+const configureServer = require("./server");
+const configureRoutes = require("./routes");
+
+configureServer(app);
+configureRoutes(app);
+
 app.use(json());
 
 app.use(
@@ -37,7 +46,6 @@ passport.use(strategy);
 ///////////////////Passport Login////////////////////////////
 passport.serializeUser((user, done) => {
   const db = app.get("db");
-  //console.log(user);
   db.get_user_by_authid(user.id)
     .then(response => {
       if (!response[0]) {
