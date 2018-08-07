@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Login from "../Login/Login";
 import "./Navbar.css";
 
 export default class Navbar extends Component {
@@ -23,6 +24,7 @@ export default class Navbar extends Component {
             </Link>
           </div>
         </div>
+        <Login />
       </div>
     );
   }

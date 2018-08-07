@@ -2,11 +2,11 @@
   height: calc(100vh - 54px);
 }
 
-@media only screen and (max-height: 1688px) {
+/* @media only screen and (max-height: 1688px) {
   .cart-container {
     height: 1700px;
   }
-}
+} */
 .card {
   height: 390px;
   width: 250px;
@@ -43,7 +43,7 @@
 }
 
 .addToCart {
-  background-color: #4caf50;
+  background-color: #607d8b;
   font-family: "Cinzel", serif;
   color: white;
   border: none;
@@ -53,7 +53,7 @@
 }
 
 .addToCart:hover {
-  background-color: white;
-  color: #4caf50;
+  background-color: #cfd8dc;
+  color: #607d8b;
   border: 1px solid;
 }

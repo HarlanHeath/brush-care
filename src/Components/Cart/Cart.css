@@ -1,5 +1,5 @@
 .cart-page {
-  height: calc(100vh - 54px);
+  /* height: calc(100vh - 54px); */
 }
 
 .cart-card {
@@ -21,7 +21,7 @@
 }
 
 .cart-container {
-  height: calc(100vh - 54px);
+  /* height: calc(100vh - 54px); */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

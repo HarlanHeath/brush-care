@@ -1,7 +1,8 @@
 .HomePage {
   margin: 0;
   width: 100vw;
-  height: calc(100vh - 54px);
+  height: 100vh;
+  /* height: calc(100vh - 54px); */
   background-image: url("https://images.pexels.com/photos/1251265/pexels-photo-1251265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-repeat: no-repeat;
   background-position: center;
@@ -31,7 +32,7 @@
     margin: 0;
     text-align: center;
     font-family: "Cinzel", serif;
-    color: yellow;
+    color: #ffeb3b;
     font-size: 45px;
     letter-spacing: 1px;
   }
