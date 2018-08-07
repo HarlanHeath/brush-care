@@ -33,7 +33,7 @@ export default class Products extends Component {
         <div className="card" key={e.prod_id}>
           <img className="imageSize" src={e.imgurl} alt="Brush" />
           <h3> Size: {e.size} </h3>
-          <h3> Hairype: {e.hairtype} </h3>
+          <h3> Hair Type: {e.hairtype} </h3>
           <h3> Shape: {e.headshape} </h3>
           <h2> Price ${e.price}</h2>
           <button

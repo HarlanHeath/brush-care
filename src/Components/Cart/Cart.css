@@ -21,6 +21,7 @@
 }
 
 .cart-container {
+  height: calc(100vh - 54px);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

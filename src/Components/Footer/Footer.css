@@ -1,12 +1,7 @@
 .Footer {
-  margin: 0px;
+  bottom: 0px;
   height: 54px;
   width: 100%;
+  position: absolute;
   background-color: #424242;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: flex-start;
-  align-content: center;
 }
