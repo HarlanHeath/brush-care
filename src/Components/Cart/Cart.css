@@ -1,3 +1,7 @@
+.cart-page {
+  height: calc(100vh - 54px);
+}
+
 .cart-card {
   height: 380px;
   width: 250px;

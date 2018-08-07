@@ -1,3 +1,7 @@
+.product-page {
+  height: calc(100vh - 54px);
+}
+
 .card {
   height: 390px;
   width: 250px;

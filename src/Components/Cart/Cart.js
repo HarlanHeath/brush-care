@@ -77,7 +77,7 @@ export default class Cart extends Component {
       );
     });
     return (
-      <div>
+      <div className="cart-page">
         <div className="cart-container">{allCart}</div>
         <div className="total-container">
           <h2>Cart Total: ${this.state.total}</h2>

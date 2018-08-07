@@ -48,7 +48,7 @@ export default class Products extends Component {
       );
     });
     return (
-      <div>
+      <div className="product-page">
         <div className="body">{allBrushes}</div>
       </div>
     );
