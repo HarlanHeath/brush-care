@@ -1,5 +1,5 @@
 .card {
-  height: 350px;
+  height: 360px;
   width: 250px;
   border: 1px solid black;
   display: flex;
@@ -22,5 +22,21 @@
   justify-content: space-around;
   align-items: stretch;
   align-content: stretch;
-  height: 100vh;
+  padding: 60px 0;
+}
+
+.addToCart {
+  background-color: #4caf50;
+  font-family: "Cinzel", serif;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  transition-duration: 0.4s;
+}
+
+.addToCart:hover {
+  background-color: white;
+  color: #4caf50;
+  border: 1px solid;
 }

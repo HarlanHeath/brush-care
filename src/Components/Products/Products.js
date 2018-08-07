@@ -34,7 +34,10 @@ export default class Products extends Component {
           <img className="imageSize" src={e.imgurl} alt="Brush" />
           <h3> Size {e.size} </h3>
           <h3> Price ${e.price}</h3>
-          <button onClick={() => this.addToCart(e.prod_id)}>
+          <button
+            className="addToCart"
+            onClick={() => this.addToCart(e.prod_id)}
+          >
             {" "}
             Add to Cart{" "}
           </button>

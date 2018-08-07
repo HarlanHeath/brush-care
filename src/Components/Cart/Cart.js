@@ -68,8 +68,8 @@ export default class Cart extends Component {
             edit quantity{" "}
           </button>
           <img src={e.imgurl} className="cart-image-size" />
-          <h3>brush size{e.size}</h3>
-          <button onClick={() => this.removeFromCart(e.id)}>
+          <h3>Brush Size {e.size}</h3>
+          <button className="Remove" onClick={() => this.removeFromCart(e.id)}>
             Remove from Cart
           </button>
         </div>
