@@ -61,6 +61,7 @@ export default class Cart extends Component {
         <div className="cart-card" key={e.prod_id}>
           <h3>{e.quantity}</h3>
           <button
+            className="Quantity"
             disabled={e.quantity <= 1 ? true : false}
             onClick={() => this.updateQuant(e.prod_id)}
           >
@@ -79,7 +80,7 @@ export default class Cart extends Component {
       <div>
         <div className="cart-container">{allCart}</div>
         <div className="total-container">
-          <h2>Total: {this.state.total}</h2>
+          <h2>Cart Total: ${this.state.total}</h2>
         </div>
         <Checkout
           name={"The Road to learn React"}
