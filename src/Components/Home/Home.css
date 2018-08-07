@@ -16,11 +16,23 @@
 
 .Slogan {
   margin: 0;
-  /* height: 300px;
-  width: 300px; */
   text-align: center;
   font-family: "Cinzel", serif;
   color: yellow;
   font-size: 55px;
   letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 400px) {
+  .HomePage {
+    height: 660px;
+  }
+  .Slogan {
+    margin: 0;
+    text-align: center;
+    font-family: "Cinzel", serif;
+    color: yellow;
+    font-size: 45px;
+    letter-spacing: 1px;
+  }
 }

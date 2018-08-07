@@ -23,6 +23,7 @@
   align-items: stretch;
   align-content: stretch;
   padding: 60px 0;
+  text-align: center;
 }
 
 .Remove {
@@ -39,4 +40,10 @@
   background-color: white;
   color: red;
   border: 1px solid;
+}
+
+@media only screen and (max-width: 500px) {
+  .cart-container {
+    height: 700px;
+  }
 }

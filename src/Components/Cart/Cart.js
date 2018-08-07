@@ -76,9 +76,11 @@ export default class Cart extends Component {
       );
     });
     return (
-      <div className="cart-container">
-        {allCart}
-        <h3>{this.state.total}</h3>
+      <div>
+        <div className="cart-container">{allCart}</div>
+        <div className="total-container">
+          <h2>Total: {this.state.total}</h2>
+        </div>
         <Checkout
           name={"The Road to learn React"}
           description={"Only the Book"}
