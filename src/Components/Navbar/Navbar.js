@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-// import Login from "../Login/Login";
 import "./Navbar.css";
 
 export default class Navbar extends Component {
@@ -27,7 +26,6 @@ export default class Navbar extends Component {
   render() {
     return (
       <div className="Mainbar">
-        {/* {console.log(this.state.logged)} */}
         <div className="full-menu">
           <Link to="/" className="route">
             Home
@@ -47,12 +45,6 @@ export default class Navbar extends Component {
               Login
             </a>
           )}
-          {/* <a href={process.env.REACT_APP_LOGIN} className="route">
-            Login
-          </a>
-          <a href={process.env.REACT_APP_LOGOUT} className="route">
-            Logout
-          </a> */}
         </div>
         <div className="dropdown">
           <button className="dropbtn">Menu</button>

@@ -1,7 +1,3 @@
-.cart-page {
-  /* height: calc(100vh - 54px); */
-}
-
 .cart-card {
   height: 380px;
   width: 250px;
@@ -21,7 +17,6 @@
 }
 
 .cart-container {
-  /* height: calc(100vh - 54px); */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -62,10 +57,4 @@
   background-color: white;
   color: red;
   border: 1px solid;
-}
-
-@media only screen and (max-width: 400px) {
-  .cart-container {
-    /* height */
-  }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import swal from "sweetalert2";
 import "./Products.css";
 
 export default class Products extends Component {
@@ -21,7 +22,12 @@ export default class Products extends Component {
   addToCart(val) {
     axios.get(`/api/me`).then(res1 => {
       axios.put(`/api/addToCart/${res1.data.user_id}/${val}`).then(() => {
-        alert("producted added!");
+        swal({
+          type: "success",
+          title: "Product has been added to your cart",
+          showConfirmButton: false,
+          timer: 1500
+        });
       });
     });
   }

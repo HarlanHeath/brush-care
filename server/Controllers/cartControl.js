@@ -1,12 +1,10 @@
 module.exports = {
   getCart: (req, res, next) => {
     const dbInstance = req.app.get("db");
-    //console.log(req.params);
     dbInstance
       .get_cart(req.params.id)
 
       .then(cart => {
-        //console.log("HERERERERER", cart);
         res.status(200).send(cart);
       })
       .catch(err => {
@@ -36,7 +34,6 @@ module.exports = {
 
   deleteFromCart: (req, res, next) => {
     const dbInstance = req.app.get("db");
-    //console.log("REQ PARAMSSSSSSSSSSSSS", req.params);
     dbInstance
       .delete_cart(parseInt(req.params.id))
       .then(cart => res.status(200).send(cart))

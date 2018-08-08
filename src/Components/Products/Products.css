@@ -2,15 +2,9 @@
   height: calc(100vh - 54px);
 }
 
-/* @media only screen and (max-height: 1688px) {
-  .cart-container {
-    height: 1700px;
-  }
-} */
 .card {
   height: 390px;
   width: 250px;
-  border: 1px solid black;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -21,11 +15,6 @@
   font-size: 10px;
   transition-duration: 0.5s;
 }
-
-/* .card:hover {
-  height: 500px;
-  width: 300px;
-} */
 
 .imageSize {
   height: 200px;
