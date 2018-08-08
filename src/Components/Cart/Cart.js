@@ -34,6 +34,7 @@ export default class Cart extends Component {
 
   getCart(id) {
     axios.get(`/api/cart/${id}`).then(res2 => {
+      console.log(res2);
       this.setState({
         cart: res2.data
       });
@@ -43,6 +44,11 @@ export default class Cart extends Component {
   removeFromCart(e) {
     axios.delete(`/api/delete/${e}`).then(() => {
       this.getCart(this.state.userId);
+      axios.get(`/api/carttotal/${this.state.userId}`).then(res2 => {
+        this.setState({
+          total: res2.data[0].sum
+        });
+      });
     });
   }
 
@@ -50,6 +56,11 @@ export default class Cart extends Component {
     axios.get(`/api/me`).then(res1 => {
       axios.post(`/api/quantchange/${res1.data.user_id}/${e}`).then(() => {
         this.getCart(this.state.userId);
+        axios.get(`/api/carttotal/${this.state.userId}`).then(res2 => {
+          this.setState({
+            total: res2.data[0].sum
+          });
+        });
       });
     });
   }

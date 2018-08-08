@@ -2,7 +2,8 @@
   height: 380px;
   width: 250px;
   margin: 60px 0;
-  border: 1px solid black;
+  border: 1px solid #607d8b;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
