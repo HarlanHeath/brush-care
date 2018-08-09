@@ -84,7 +84,7 @@ export default class Cart extends Component {
       return (
         <div className="cart-card" key={e.prod_id}>
           <div className="quant-contain">
-            <h3>{e.quantity}</h3>
+            Quantity
             <button
               className="Quantity"
               disabled={e.quantity <= 1 ? true : false}
@@ -93,6 +93,7 @@ export default class Cart extends Component {
               {" "}
               -{" "}
             </button>
+            <h3>{e.quantity}</h3>
             <button
               className="Add-Quantity"
               onClick={() => this.AddQuant(e.prod_id)}
