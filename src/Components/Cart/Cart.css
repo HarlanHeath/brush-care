@@ -44,6 +44,22 @@
   border: 1px solid;
 }
 
+.Add-Quantity {
+  background-color: green;
+  font-family: "Cinzel", serif;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  transition-duration: 0.4s;
+}
+
+.Add-Quantity:hover {
+  background-color: white;
+  color: green;
+  border: 1px solid;
+}
+
 .Remove {
   background-color: red;
   font-family: "Cinzel", serif;

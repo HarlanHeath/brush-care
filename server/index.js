@@ -75,6 +75,7 @@ app.get("/api/carttotal/:user_id", cartcontroller.cartTotal);
 app.put("/api/addToCart/:user_id/:prod_id", cartcontroller.addToCart);
 app.delete("/api/delete/:id", cartcontroller.deleteFromCart);
 app.post("/api/quantchange/:user_id/:prod_id", cartcontroller.updateQuant);
+app.post("/api/addquant/:user_id/:prod_id", cartcontroller.addQuant);
 
 //login crud
 app.get("/login", login);

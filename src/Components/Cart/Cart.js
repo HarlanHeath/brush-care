@@ -65,20 +65,42 @@ export default class Cart extends Component {
     });
   }
 
+  AddQuant(e) {
+    axios.get(`/api/me`).then(res1 => {
+      axios.post(`/api/addquant/${res1.data.user_id}/${e}`).then(() => {
+        this.getCart(this.state.userId);
+        axios.get(`/api/carttotal/${this.state.userId}`).then(res2 => {
+          this.setState({
+            total: res2.data[0].sum
+          });
+        });
+      });
+    });
+  }
+
   render() {
     let { cart } = this.state;
     let allCart = cart.map(e => {
       return (
         <div className="cart-card" key={e.prod_id}>
-          <h3>{e.quantity}</h3>
-          <button
-            className="Quantity"
-            disabled={e.quantity <= 1 ? true : false}
-            onClick={() => this.updateQuant(e.prod_id)}
-          >
-            {" "}
-            edit quantity{" "}
-          </button>
+          <div className="quant-contain">
+            <h3>{e.quantity}</h3>
+            <button
+              className="Quantity"
+              disabled={e.quantity <= 1 ? true : false}
+              onClick={() => this.updateQuant(e.prod_id)}
+            >
+              {" "}
+              -{" "}
+            </button>
+            <button
+              className="Add-Quantity"
+              onClick={() => this.AddQuant(e.prod_id)}
+            >
+              {" "}
+              +{" "}
+            </button>
+          </div>
           <img src={e.imgurl} className="cart-image-size" />
           <h3>Brush Size {e.size}</h3>
           <button className="Remove" onClick={() => this.removeFromCart(e.id)}>
