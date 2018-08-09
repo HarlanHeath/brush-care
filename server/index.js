@@ -16,6 +16,7 @@ const cartcontroller = require("./Controllers/cartControl");
 const port = 3001;
 const app = express();
 
+console.log(`${__dirname}/../build`);
 app.use(express.static(`${__dirname}/../build`));
 
 massive(process.env.CONNECTION_STRING).then(dbInstance => {
