@@ -33,3 +33,12 @@
     font-size: 30px;
   }
 }
+
+@media only screen and (max-width: 375px) {
+  .HomePage {
+    height: 812px;
+  }
+  .Slogan {
+    font-size: 30px;
+  }
+}

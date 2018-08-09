@@ -16,6 +16,8 @@ const cartcontroller = require("./Controllers/cartControl");
 const port = 3001;
 const app = express();
 
+app.use(express.static(`${__dirname}/../build`));
+
 massive(process.env.CONNECTION_STRING).then(dbInstance => {
   app.set("db", dbInstance);
 });
@@ -78,6 +80,11 @@ app.post("/api/quantchange/:user_id/:prod_id", cartcontroller.updateQuant);
 app.get("/login", login);
 app.get("/logout", logout);
 app.get("/api/me", getUser);
+
+const path = require("path");
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build/index.html"));
+});
 
 app.listen(port, () => {
   console.log(`Listening on port: ${port}`);

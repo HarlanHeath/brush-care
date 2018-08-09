@@ -14,9 +14,9 @@
 }
 
 .route {
-  margin: 15px;
+  margin: 35px;
   font-family: "Cinzel", serif;
-  font-size: 20px;
+  font-size: 22px;
   color: snow;
   text-decoration: none;
 }
@@ -63,14 +63,21 @@
   background-color: #cfd8dc;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 600px) {
   .dropdown {
     display: none;
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .full-menu {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .route {
+    margin: 20px;
+    font-size: 20px;
   }
 }
