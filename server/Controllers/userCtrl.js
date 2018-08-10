@@ -2,8 +2,8 @@ const passport = require("passport");
 
 module.exports = {
   login: passport.authenticate("auth0", {
-    successRedirect: "http://localhost:3000/#/",
-    failureRedirect: "http://localhost:3000/#/login"
+    successRedirect: process.env.REACT_APP_SUCCESS_REDIRECT,
+    failureRedirect: process.env.REACT_APP_FAIL_REDIRECT
   }),
 
   logout: (req, res) => {
